@@ -5,8 +5,8 @@ class Triangle:
     def __init__(self,sideA=1.0,sideB=None,sideC=None):
         if isinstance(sideA,Triangle):
          self.__sideA=sideA.sideA
-         self.__sideB=sideB.sideB
-         self.__sideC=sideC.sideC
+         self.__sideB=sideA.sideB
+         self.__sideC=sideA.sideC
         
         else:
             if sideB is None or sideC is None:
@@ -18,8 +18,8 @@ class Triangle:
             elif sideC is None:
             #isosceles triangle
                 self.__sideA = sideA
-                self.__sideB = sideB
-                self.__sideC = sideA
+                self.__sideB = sideA
+                self.__sideC = sideB
 
             else:
                 #Scalene triangle
@@ -38,7 +38,7 @@ class Triangle:
     @sideA.setter
     def sideA(self,value):
         if value > 0:
-            self.sideA = value
+            self.__sideA = value
         else:
             print("Side A must be positive.")
             
